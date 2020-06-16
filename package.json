@@ -1,0 +1,23 @@
+{
+  "name": "cuddly-enigma",
+  "version": "1.0.0",
+  "description": "A project by: David Lance",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebabian/cuddly-enigma.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebabian/cuddly-enigma/issues"
+  },
+  "homepage": "https://github.com/ebabian/cuddly-enigma#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
