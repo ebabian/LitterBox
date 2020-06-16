@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-//const Litter? = require('../models/Litter?.js');
+const Litter = require('../models/litter.js');
 
 //Create a post
 router.post('/', (req, res) => {
