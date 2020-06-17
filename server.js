@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static('public'))
 
 //controller
-const catController = require('./controller/litterBoxRoute.js')
+const catController = require('./controllers/litterBoxRoute.js')
 app.use('/litterbox', catController)
 
 // connect mongoose to database litterbox
