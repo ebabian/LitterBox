@@ -8,15 +8,16 @@ function($http){
   this.entry= '';
   this.date = 0;
   this.likes = 0;
-
+  const controller = this
 
 // get function
 this.getCat = function(){
   $http({
     method: 'GET',
     url: '/litterbox'
-  }).then(function(response){
-    this.cat = response.data;
+  }).then(
+    function(response){
+      controller.cat = response.data;
   })
 }
 
@@ -33,13 +34,13 @@ this.createCat = function(){
     }
   }).then(
     function(response){
-      this.getCat()
+      controller.getCat()
     },
     function(error){
       console.log(error);
-    }
-  })
-}
+    })
+  }
+
 
 //edit 'put'
     this.editCat = function(litter){
