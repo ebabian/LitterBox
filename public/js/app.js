@@ -9,6 +9,7 @@ function($http){
   this.date = 0;
   this.likes = 0;
   const controller = this
+  this.indexOfEditFormToShow = null;
 
 // get function
 this.getCat = function(){

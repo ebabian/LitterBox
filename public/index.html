@@ -10,5 +10,35 @@
 </head>
 <body ng-controller="CatController as ctrl">
 
+
+
+<article ng-repeat="catBlog in ctrl.cat">
+<!--display the article-->
+
+
+<!--display the date-->
+
+<!--display the by:-->
+
+<!--delete button-->
+    <button ng-click="ctrl.deleteCat(catBlog)">
+        Delete?
+    </button>
+
+<!--edit button-->
+    <a
+            ng-if="$index !== ctrl.indexOfEditFormToShow"
+            ng-click="ctrl.indexOfEditFormToShow = $index"
+            href="#"
+    >Edit?
+    </a>
+<!--edit form revealed when edit button clicked-->
+    <form
+            ng-if="$index === ctrl.indexOfEditFormToShow"
+            ng-submit="ctrl.editTodo(catBlog)">
+
+    </form>
+</article>
+
 </body>
 </html>
