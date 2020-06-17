@@ -4,11 +4,16 @@ const Litter = require('../models/litter.js');
 
 //Create a post
 router.post('/', (req, res) => {
-
+    Litter.create(req.body, (err, createdLitter) => {
+        res.json(createdLitter);
+    })
 });
 
 //Delete a post
 router.delete('/:id', (req, res) => {
+    Litter.findByIdAndRemove(req.params.id, (err, deletedLitter) => {
+        res.json(deletedLitter);
+    });
 
 })
 
