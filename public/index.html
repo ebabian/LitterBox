@@ -16,7 +16,8 @@
   <li>
     {{catBlog.username}}:
     {{catBlog.entry}}
-
+    {{catBlog.date}}
+    Likes:{{catBlog.likes}}
 <!--delete button-->
   <button ng-click="ctrl.deleteCat(catBlog)">
       Delete?
@@ -40,8 +41,6 @@
   <input type="text" ng-model="ctrl.username" placeholder="username"><br/>
   <input type="text" ng-model="ctrl.entry" placeholder="entry"><br/>
   <input type="date" ng-model="ctrl.date" placeholder="date"><br/>
-  Likes: <br/>
-  <input type="number" ng-model="ctrl.likes" placeholder="likes"><br/>
   <input type="submit" value="Post">
 </form>
 
