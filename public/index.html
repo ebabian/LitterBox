@@ -9,11 +9,31 @@
     <title>LitterBox</title>
 </head>
 <body ng-controller="CatController as ctrl">
+
+
 <h1>{{ctrl.header}}</h1>
 <ul ng-repeat="catBlog in ctrl.cat">
   <li>
     {{catBlog.username}}:
     {{catBlog.entry}}
+
+<!--delete button-->
+  <button ng-click="ctrl.deleteCat(catBlog)">
+      Delete?
+  </button>
+  <!--edit button-->
+  <a
+          ng-if="$index !== ctrl.indexOfEditFormToShow"
+          ng-click="ctrl.indexOfEditFormToShow = $index"
+          href="#"
+  >Edit?
+  </a>
+  <!--edit form revealed when edit button clicked-->
+  <form
+          ng-if="$index === ctrl.indexOfEditFormToShow"
+          ng-submit="ctrl.editTodo(catBlog)">
+
+  </form>
   </li>
 </ul>
 <form ng-submit="ctrl.createCat()">
@@ -24,5 +44,6 @@
   <input type="number" ng-model="ctrl.likes" placeholder="likes"><br/>
   <input type="submit" value="Post">
 </form>
+
 </body>
 </html>

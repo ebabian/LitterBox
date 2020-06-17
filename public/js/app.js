@@ -10,6 +10,7 @@ function($http){
   this.likes = 0;
   this.header = 'Litter Box'
   const controller = this
+  this.indexOfEditFormToShow = null;
 
 // get function
 this.getCat = function(){
