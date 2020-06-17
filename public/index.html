@@ -9,15 +9,19 @@
     <title>LitterBox</title>
 </head>
 <body ng-controller="CatController as ctrl">
-
-
 <h1>{{ctrl.header}}</h1>
+<form ng-submit="ctrl.createCat()">
+  <input type="text" ng-model="ctrl.username" placeholder="username">
+  <input type="text" ng-model="ctrl.entry" placeholder="entry">
+  <input type="date" ng-model="ctrl.date">
+  <input type="submit" value="Post">
+</form>
 <ul ng-repeat="catBlog in ctrl.cat">
   <li>
-    {{catBlog.username}}:
-    {{catBlog.entry}}
-    {{catBlog.date}}
-    Likes:{{catBlog.likes}}
+    {{catBlog.username}}<br/>
+    {{catBlog.date}}<br/>
+    {{catBlog.entry}}<br/>
+    Likes:{{catBlog.likes}}<br/>
 <!--delete button-->
   <button ng-click="ctrl.deleteCat(catBlog)">
       Delete?
@@ -37,12 +41,5 @@
   </form>
   </li>
 </ul>
-<form ng-submit="ctrl.createCat()">
-  <input type="text" ng-model="ctrl.username" placeholder="username"><br/>
-  <input type="text" ng-model="ctrl.entry" placeholder="entry"><br/>
-  <input type="date" ng-model="ctrl.date" placeholder="date"><br/>
-  <input type="submit" value="Post">
-</form>
-
 </body>
 </html>

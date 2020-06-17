@@ -6,7 +6,7 @@ app.controller('CatController', ['$http',
 function($http){
   this.username = '';
   this.entry= '';
-  this.date = 0;
+  this.date = '';
   this.likes = 0;
   this.header = 'Litter Box'
   const controller = this
@@ -36,7 +36,6 @@ this.createCat = function(){
       username: this.username,
       entry: this.entry,
       date: this.date,
-      likes: this.likes
     }
   }).then(
     function(response){
@@ -45,10 +44,9 @@ this.createCat = function(){
     function(error){
       console.log(error);
     })
-    // this.username = ''
-    // this.entry = ''
-    // this.date = 0
-    // this.likes = 0
+    this.username = ''
+    this.entry = ''
+    this.date = ''
   }
 
 

@@ -4,7 +4,7 @@ const litterSchema = new mongoose.Schema(
     {
         username: String,
         entry: String,
-        date: Date,
+        date: String,
         likes: Number,
 
     }
