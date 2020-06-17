@@ -9,6 +9,20 @@
     <title>LitterBox</title>
 </head>
 <body ng-controller="CatController as ctrl">
-
+<h1>{{ctrl.header}}</h1>
+<ul ng-repeat="catBlog in ctrl.cat">
+  <li>
+    {{catBlog.username}}:
+    {{catBlog.entry}}
+  </li>
+</ul>
+<form ng-submit="ctrl.createCat()">
+  <input type="text" ng-model="ctrl.username" placeholder="username"><br/>
+  <input type="text" ng-model="ctrl.entry" placeholder="entry"><br/>
+  <input type="date" ng-model="ctrl.date" placeholder="date"><br/>
+  Likes: <br/>
+  <input type="number" ng-model="ctrl.likes" placeholder="likes"><br/>
+  <input type="submit" value="Post">
+</form>
 </body>
 </html>
