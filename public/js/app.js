@@ -11,10 +11,35 @@ function($http){
 
 
 // get function
-
+this.getCat = function(){
+  $http({
+    method: 'GET',
+    url: '/litterbox'
+  }).then(function(response){
+    this.cat = response.data;
+  })
+}
 
 // create 'post'
-
+this.createCat = function(){
+  $http({
+    method:'POST',
+    url: '/litterbox',
+    data: {
+      username: this.username,
+      entry: this.entry,
+      date: this.date,
+      likes: this.likes
+    }
+  }).then(
+    function(response){
+      this.getCat()
+    },
+    function(error){
+      console.log(error);
+    }
+  })
+}
 
 //edit 'put'
 
@@ -23,4 +48,5 @@ function($http){
 
 
 //call get function on page load
+this.getCat()
 }])
