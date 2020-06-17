@@ -44,6 +44,10 @@ this.createCat = function(){
     function(error){
       console.log(error);
     })
+    // this.username = ''
+    // this.entry = ''
+    // this.date = 0
+    // this.likes = 0
   }
 
 
