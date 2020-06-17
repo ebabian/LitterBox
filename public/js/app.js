@@ -8,6 +8,7 @@ function($http){
   this.entry= '';
   this.date = 0;
   this.likes = 0;
+  this.header = 'Litter Box'
   const controller = this
   this.indexOfEditFormToShow = null;
 
@@ -19,6 +20,10 @@ this.getCat = function(){
   }).then(
     function(response){
       controller.cat = response.data;
+      console.log(controller.cat);
+  },
+    function(error){
+    console.log(error);
   })
 }
 
