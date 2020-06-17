@@ -8,7 +8,8 @@ function($http){
   this.entry= '';
   this.date = '';
   this.likes = 0;
-  this.header = 'Litter Box'
+  this.updatedEntry = '';
+  this.header = 'Litter Box';
   const controller = this
   this.indexOfEditFormToShow = null;
 
@@ -57,17 +58,19 @@ this.createCat = function(){
                 method:'PUT',
                 url: '/litterbox/' + litter._id,
                 data: {
-                    entry: this.updatedEntry,
+                    entry: this.updatedEntry
                 }
             }
         ).then(
-            () =>{
-                this.getCat();
+            function(response){
+
+                controller.getCat()
             },
             function(error){
                 console.log(error);
             }
         )
+        this.indexOfEditFormToShow = null;
     }
 
 //delete
