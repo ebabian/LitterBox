@@ -3,10 +3,11 @@ const mongoose = require('mongoose')
 const litterSchema = new mongoose.Schema(
     {
         username: String,
+        img: String,
+        title: String,
         entry: String,
-        date: Date,
+        date: String,
         likes: Number,
-
     }
 )
 
