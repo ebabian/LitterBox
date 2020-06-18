@@ -1,0 +1,43 @@
+body {
+
+}
+#title-img {
+  width: 30px;
+  margin-right: 10px;
+  margin-bottom: -2px;
+}
+h1 {
+  text-align: center;
+}
+#edit-del-btn {
+  float: right;
+  width: 18px;
+  margin-right: 20px;
+}
+#edit-del-btn:hover{
+  cursor: pointer;
+}
+li {
+  margin-right: 100px;
+  list-style: none;
+}
+#username {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+h5 {
+  margin: 0;
+}
+#li-blog {
+  border-bottom: .5px solid black
+}
+.create-post {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#img-cat {
+  width: 27px;
+  margin-bottom: -8px;
+  margin-right: 3px;
+}
