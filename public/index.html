@@ -20,7 +20,9 @@
     {{catBlog.username}}<br/>
     {{catBlog.date}}<br/>
     {{catBlog.entry}}<br/>
-    Likes:{{catBlog.likes}}<br/>
+      <form ng-submit="ctrl.updateLikes(catBlog)">
+          <input type="hidden" ng-model="ctrl.likes" value={{catBlog.likes}}>
+          <input class="cat-like" type="submit"/></form>Likes:{{catBlog.likes}}<br/>
 <!--delete button-->
   <button ng-click="ctrl.deleteCat(catBlog)">
       Delete?

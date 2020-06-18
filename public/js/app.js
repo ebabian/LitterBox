@@ -53,6 +53,27 @@ this.createCat = function(){
     this.date = ''
   }
 
+//make another put request and have the function increment by one
+    //maybe a form with just a button
+    this.updateLikes = function(litter){
+        $http(
+            {
+                method: 'PUT',
+                url: '/litterbox/' + litter._id,
+                data: {
+                    likes: litter.likes += 1
+                }
+            }
+        ).then(
+            function (response) {
+                console.log(response)
+                controller.getCat()
+            },
+            function(error){
+                console.log(error);
+            }
+        )
+    }
 
 //edit 'put'
     this.editCat = function(litter){
