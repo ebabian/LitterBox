@@ -14,9 +14,9 @@
 
 <div class="create-post">
 <form ng-submit="ctrl.createCat()">
-  <img id="img-cat" src="https://img.icons8.com/wired/64/000000/pixel-cat.png"/><input type="text" ng-model="ctrl.username" placeholder="username">
-  <input type="text" ng-model="ctrl.entry" placeholder="entry">
-  <input type="submit" value="Post">
+  <img id="img-cat" src="https://img.icons8.com/pastel-glyph/64/000000/cat--v3.png"/><input id="user-input" type="text" ng-model="ctrl.username" placeholder="Username"><br/>
+  <textarea id="entry-input" type="text" ng-model="ctrl.entry" placeholder="Entry"></textarea><br/>
+  <input id="create-submit" type="submit" value="Post">
 </form>
 </div>
 
@@ -32,12 +32,12 @@
           ng-click="ctrl.indexOfEditFormToShow = $index"
           src="https://img.icons8.com/ios-glyphs/30/000000/edit.png"/>
       <!--edit form revealed when edit button clicked-->
-    <h5>{{catBlog.date}}</h5><br/>
-    <h5>{{catBlog.entry}}</h5><br/>
+    <h5 id="date">{{catBlog.date}}</h5><br/>
+    <p>{{catBlog.entry}}</p><br/>
     <!-- likes -->
     <form ng-submit="ctrl.updateLikes(catBlog)">
       <input type="hidden" ng-blog="ctrl.likes" value={{catBlog.likes}}>
-      <input type="submit" name="cat-like" value="Likes: {{ctrl.likes}} "/>
+      <input id="like-btn" type="submit" name="cat-like" value="{{catBlog.likes}} likes"/>
     </form><br/>
   </li>
   <form ng-submit="ctrl.editCat(catBlog)">
