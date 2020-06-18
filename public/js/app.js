@@ -2,6 +2,7 @@ console.log("I work!")
 
 const app = angular.module('LitterApp', [])
 
+
 app.controller('CatController', ['$http',
 function($http){
   this.username = '';
@@ -20,8 +21,10 @@ this.getCat = function(){
     url: '/litterbox'
   }).then(
     function(response){
-      controller.cat = response.data;
-      console.log(controller.cat);
+      for (const cat in response.data){
+          response.data[cat].date = response.data[cat].date.replace(/\d\d:.*/, '')
+      }
+        controller.cat = response.data;
   },
     function(error){
     console.log(error);
@@ -36,7 +39,7 @@ this.createCat = function(){
     data: {
       username: this.username,
       entry: this.entry,
-      date: this.date,
+      date: Date(),
     }
   }).then(
     function(response){
@@ -50,6 +53,27 @@ this.createCat = function(){
     this.date = ''
   }
 
+//make another put request and have the function increment by one
+    //maybe a form with just a button
+    this.updateLikes = function(litter){
+        $http(
+            {
+                method: 'PUT',
+                url: '/litterbox/' + litter._id,
+                data: {
+                    likes: litter.likes += 1
+                }
+            }
+        ).then(
+            function (response) {
+                console.log(response)
+                controller.getCat()
+            },
+            function(error){
+                console.log(error);
+            }
+        )
+    }
 
 //edit 'put'
     this.editCat = function(litter){

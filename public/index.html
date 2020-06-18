@@ -34,7 +34,11 @@
       <!--edit form revealed when edit button clicked-->
     <h5>{{catBlog.date}}</h5><br/>
     <h5>{{catBlog.entry}}</h5><br/>
-    <h5>Likes:{{catBlog.likes}}</h5><br/>
+    <!-- likes -->
+    <form ng-submit="ctrl.updateLikes(catBlog)">
+      <input type="hidden" ng-blog="ctrl.likes" value={{catBlog.likes}}>
+      <input type="submit" name="cat-like" value="Likes: {{ctrl.likes}} "/>
+    </form><br/>
   </li>
   <form ng-submit="ctrl.editCat(catBlog)">
     <li ng-if="$index === ctrl.indexOfEditFormToShow">
