@@ -12,7 +12,6 @@ app.use(express.static('public'))
 const catController = require('./controllers/litterBoxRoute.js')
 app.use('/litterbox', catController)
 
-// connect mongoose to database litterbox
 mongoose.connect('mongodb://localhost:27017/litterbox',
 {
   useNewUrlParser: true,
